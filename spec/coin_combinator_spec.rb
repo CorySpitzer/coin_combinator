@@ -67,4 +67,11 @@ describe('Fixnum#coin_combine') do
                                    'quarters' => 0}))
     end
 
+  # handles 67 cents
+  it('Returns 2 quarters, 1 dime, 1 nickle, 2 pennies') do
+    expect(67.coin_combine).to(eq({'pennies'  => 2,
+                                   'nickles'  => 1,
+                                   'dimes'    => 1,
+                                   'quarters' => 2}))
+    end
 end
