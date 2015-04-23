@@ -9,6 +9,6 @@ describe('the coin conbinator path',{:type => :feature}) do
     visit('/')
     fill_in('amount', {:with => '178'})
     click_button('submit')
-    expect(page).to(have_content('quarters: 7 pennies: 3'))
+    expect(page).to(have_content('quarters: 7 dimes: 0 nickles: 0 pennies: 3'))
   end
 end

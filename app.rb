@@ -14,5 +14,8 @@ get('/combinator') do
   nickles = quantity_hash['nickles'].to_s()
   pennies = quantity_hash['pennies'].to_s()
 
-  @result = "quarters: " + quarters + " pennies: " + pennies
+  @result = "quarters: " + quarters +
+            " dimes: " + dimes +
+            " nickles: " + nickles +
+            " pennies: " + pennies
 end
