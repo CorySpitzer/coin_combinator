@@ -25,6 +25,11 @@ class Fixnum
     elsif amount < 10
       coins['pennies'] += (amount-5).coin_combine('pennies')
       coins['nickles'] += 1
+    elsif amount < 25
+      dimes = amount / 10
+      coins['pennies'] += (amount.%(10)).coin_combine('pennies')
+      coins['nickles'] += (amount - (dimes * 10)).coin_combine('nickles')
+      coins['dimes'] = dimes   
     end
 
     # mode should be a key in the coins hash or 'hash'
