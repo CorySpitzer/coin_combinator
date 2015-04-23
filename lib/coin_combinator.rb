@@ -1,5 +1,5 @@
 class Fixnum
-  define_method(:coin_combine) do
+  define_method(:coin_combine) do |mode='hash'|
     coins = {
       'pennies'  => 0,
       'nickles'  => 0,
@@ -20,8 +20,15 @@ class Fixnum
     if coin_values.has_value?(amount)
       coin_name = coin_names[amount]
       coins[coin_name] += 1
+    elsif amount == 2
+      coins['pennies'] += ((1.coin_combine('pennies'))*2)
     end
 
-    coins
+    # mode should be a key in the coins hash or 'hash'
+    if mode == 'hash'
+      coins
+    else
+      coins[mode]
+    end
   end
 end
