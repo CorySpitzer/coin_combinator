@@ -29,7 +29,14 @@ class Fixnum
       dimes = amount / 10
       coins['pennies'] += (amount.%(10)).coin_combine('pennies')
       coins['nickles'] += (amount - (dimes * 10)).coin_combine('nickles')
-      coins['dimes'] = dimes   
+      coins['dimes'] = dimes
+    else #67
+      quarters = amount / 25
+      dimes = (amount - (quarters * 25)) / 10
+      coins['pennies'] += (amount.%(10)).coin_combine('pennies')
+      coins['nickles'] += (amount - ( (dimes*10) + (quarters*25) )).coin_combine('nickles')
+      coins['dimes']    = dimes
+      coins['quarters'] = quarters
     end
 
     # mode should be a key in the coins hash or 'hash'
