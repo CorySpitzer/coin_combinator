@@ -20,8 +20,8 @@ class Fixnum
     if coin_values.has_value?(amount)
       coin_name = coin_names[amount]
       coins[coin_name] += 1
-    elsif amount == 2
-      coins['pennies'] += ((1.coin_combine('pennies'))*2)
+    elsif amount < 5
+      coins['pennies'] += ((1.coin_combine('pennies')) * amount)
     end
 
     # mode should be a key in the coins hash or 'hash'
