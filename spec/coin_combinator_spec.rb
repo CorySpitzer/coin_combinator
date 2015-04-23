@@ -19,12 +19,20 @@ describe('Fixnum#coin_combine') do
   end
 
   # If we give it 2, it will return two pennies
-  it('returns a hash with 1 penny if user inputs 1') do
+  it('returns a hash with 2 pennies if user inputs 2') do
     expect(2.coin_combine).to(eq({'pennies'  => 2,
                                   'nickles'  => 0,
                                   'dimes'    => 0,
                                   'quarters' => 0}))
   end
+
+  # If we give it 4, it will return four pennies
+  it('returns a hash with 4 pennies if user inputs 4') do
+    expect(4.coin_combine).to(eq({'pennies'  => 4,
+                                  'nickles'  => 0,
+                                  'dimes'    => 0,
+                                  'quarters' => 0}))
+    end
 
   # If we give it 5, it will return a nickle
   it('returns a hash with 0 pennies and 1 nickle') do
